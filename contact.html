@@ -43,34 +43,22 @@
 
   <p>If you prefer, just leave me a quick message here:</p>
 
-  <form id="contact-form" class="contact-form">
+  <form action="https://formsubmit.co/zvimarmor@gmail.com" method="POST" target="dummyframe" class="contact-form">
+    <input type="hidden" name="_captcha" value="false">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
     <button type="submit">Send</button>
   </form>
-  
-  <p id="success-message" style="display:none; color:green; font-weight:bold; margin-top:20px;">
-    Your message was sent successfully!
-  </p>
+  <iframe name="dummyframe" style="display:none;"></iframe>
+  <p id="success-message" style="display:none; color:green; margin-top:20px;">Message sent successfully!</p>
   
   <script>
-  document.getElementById('contact-form').addEventListener('submit', function(e){
-      e.preventDefault(); 
-      const form = e.target;
-      fetch("https://formsubmit.co/zvimarmor@gmail.com", {
-          method: "POST",
-          body: new FormData(form)
-      }).then(response => {
-          if(response.ok){
-              document.getElementById('success-message').style.display = 'block';
-              form.reset();
-          } else {
-              alert('Something went wrong, please try again.');
-          }
-      });
+  document.querySelector('.contact-form').addEventListener('submit', function() {
+    document.getElementById('success-message').style.display = 'block';
   });
   </script>
+  
   
       
   </form>
