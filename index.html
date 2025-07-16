@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Zvi Marmor – Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lock-scroll">
+
+  <!-- 1) Hidden navbar -->
+  <header id="navbar" class="navbar hidden">
+    <h1>Zvi Marmor</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 2) Landing hero -->
+  <section id="landing-screen" class="hero">
+    <h2>Hi, I’m <span>Zvi Marmor</span></h2>
+    <p class="hero-intro">CS & Neuroscience at HUJI + AI Developer</p>
+    <button onclick="scrollToContent()">Enter Site</button>
+  </section>
+
+  <!-- 3) Main Home -->
+  <main id="main-content" class="hidden">
+    <section class="home-intro">
+      <h2>Welcome to my corner of the web</h2>
+      <p>Check out my AI trading experiments, my open‐source projects, and my CV.</p>
+      <img src="images/intro.png" alt="Zvi at work" class="intro-image">
+    </section>
+    <section class="cards">
+      <a class="card appear" href="projects.html">
+        <h3>Projects</h3><p>See my GitHub repos & demos →</p>
+      </a>
+      <a class="card appear" href="resume.html">
+        <h3>Resume</h3><p>My background, skills & education →</p>
+      </a>
+      <a class="card appear" href="contact.html">
+        <h3>Contact</h3><p>Let’s connect on LinkedIn or via email →</p>
+      </a>
+    </section>
+  </main>
+
+  <script>
+    function scrollToContent() {
+      document.getElementById('landing-screen').classList.add('slide-up');
+      setTimeout(() => {
+        document.getElementById('landing-screen').style.display = 'none';
+        document.getElementById('navbar').classList.remove('hidden');
+        document.getElementById('main-content').classList.remove('hidden');
+        document.body.classList.remove('lock-scroll');
+        document.querySelectorAll('.appear').forEach((el,i) =>
+          setTimeout(()=>el.classList.add('show'), i*200)
+        );
+      }, 800);
+    }
+  </script>
+
+</body>
+</html>
