@@ -5,63 +5,238 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Zvi Marmor – Home</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --caramel: #AB7743;
+      --espresso: #4C2B08;
+      --almond: #B7957F;
+      --vanilla: #D7BDA6;
+      --coffee: #6D3914;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--vanilla);
+      color: var(--espresso);
+    }
+    .lock-scroll { overflow: hidden; }
+
+    .hidden { display: none; }
+
+    .navbar {
+      background: var(--coffee);
+      color: var(--vanilla);
+      padding: px 20px;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--vanilla);
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--caramel); }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.8s ease;
+    }
+
+    .hero h2 { font-size: 2.8rem; margin: 0.5rem 0; }
+    .hero h2 span { color: var(--caramel); }
+    .hero p { font-size: 1.4rem; margin-bottom: 2rem; }
+
+    .hero button {
+      padding: 0.8rem 2rem;
+      background: var(--espresso);
+      color: var(--vanilla);
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background: var(--caramel);
+      color: var(--espresso);
+    }
+
+    .slide-up { transform: translateY(-100vh); pointer-events: none; }
+
+    #main-content {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .home-intro {
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .home-intro h2 { font-size: 2.4rem; margin-bottom: 1rem; }
+    .home-intro p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .intro-image {
+      width: 80%;
+      max-width: 700px;
+      border-radius: 20px;
+      box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .gallery-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .gallery-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: var(--coffee);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-auto-rows: 200px;
+      gap: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 3px 3px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery-grid img:hover { transform: scale(1.05); }
+
+    /* Variations for different heights */
+    .tall { grid-row: span 2; }
+    .wide { grid-column: span 2; }
+    .big { grid-column: span 2; grid-row: span 2; }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: var(--almond);
+      color: var(--espresso);
+      width: 260px;
+      padding: 20px;
+      border-radius: 15px;
+      text-decoration: none;
+      transition: transform 0.3s, background 0.3s;
+      box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      background: var(--caramel);
+      color: var(--espresso);
+    }
+
+    .card h3 { margin-bottom: 0.5rem; font-size: 1.4rem; }
+    .card p { font-size: 1rem; line-height: 1.4; }
+  </style>
 </head>
+
 <body class="lock-scroll">
 
-  <!-- 1) Hidden navbar -->
-  <header id="navbar" class="navbar hidden">
-    <h1>Zvi Marmor</h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header id="navbar" class="navbar hidden">
+  <h1>Zvi Marmor</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="zvimarmor_cv.pdf" target="_blank">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- 2) Landing hero -->
-  <section id="landing-screen" class="hero">
-    <h2>Hi, I’m <span>Zvi Marmor</span></h2>
-    <p class="hero-intro">CS & Neuroscience at HUJI + AI Developer</p>
-    <button onclick="scrollToContent()">Enter Site</button>
+<section id="landing-screen" class="hero">
+  <h2>Hi, I’m <span>Zvi Marmor</span></h2>
+  <p class="hero-intro">CS & Neuroscience at HUJI + AI Developer</p>
+  <button onclick="scrollToContent()">Enter Site</button>
+</section>
+
+<main id="main-content" class="hidden">
+  <section class="home-intro">
+    <h2>Welcome to my corner of the web</h2>
+    <p>Check out my AI trading experiments, my open-source projects, and my CV.</p>
   </section>
 
-  <!-- 3) Main Home -->
-  <main id="main-content" class="hidden">
-    <section class="home-intro">
-      <h2>Welcome to my corner of the web</h2>
-      <p>Check out my AI trading experiments, my open‐source projects, and my CV.</p>
-      <img src="images/intro.png" alt="Zvi at work" class="intro-image">
-    </section>
-    <section class="cards">
-      <a class="card appear" href="projects.html">
-        <h3>Projects</h3><p>See my GitHub repos & demos →</p>
-      </a>
-      <a class="card appear" href="resume.html">
-        <h3>Resume</h3><p>My background, skills & education →</p>
-      </a>
-      <a class="card appear" href="contact.html">
-        <h3>Contact</h3><p>Let’s connect on LinkedIn or via email →</p>
-      </a>
-    </section>
-  </main>
+  <section class="gallery-section">
+    <div class="gallery-grid">
+      <img src="images/intro/photo1.jpg" class="tall">
+      <img src="images/intro/photo2.jpg">
+      <img src="images/intro/photo.jpg">
+      <img src="images/intro/photo3.jpg" class="wide">
+      <img src="images/intro/photo4.png">
+      <img src="images/intro/photo5.jpg"class="big">
+      <img src="images/intro/photo6.png" >
+    </div>
+  </section>
 
-  <script>
-    function scrollToContent() {
-      document.getElementById('landing-screen').classList.add('slide-up');
-      setTimeout(() => {
-        document.getElementById('landing-screen').style.display = 'none';
-        document.getElementById('navbar').classList.remove('hidden');
-        document.getElementById('main-content').classList.remove('hidden');
-        document.body.classList.remove('lock-scroll');
-        document.querySelectorAll('.appear').forEach((el,i) =>
-          setTimeout(()=>el.classList.add('show'), i*200)
-        );
-      }, 800);
-    }
-  </script>
+  <section class="cards">
+    <a class="card" href="projects.html">
+      <h3>Projects</h3><p>See my GitHub repos & demos →</p>
+    </a>
+    <a class="card" href="resume.html">
+      <h3>Resume</h3><p>My background, skills & education →</p>
+    </a>
+    <a class="card" href="contact.html">
+      <h3>Contact</h3><p>Let’s connect on LinkedIn or via email →</p>
+    </a>
+  </section>
+</main>
+
+<script>
+  function scrollToContent() {
+    document.getElementById('landing-screen').classList.add('slide-up');
+    setTimeout(() => {
+      document.getElementById('landing-screen').style.display = 'none';
+      document.getElementById('navbar').classList.remove('hidden');
+      document.getElementById('main-content').classList.remove('hidden');
+      document.body.classList.remove('lock-scroll');
+    }, 800);
+  }
+</script>
 
 </body>
 </html>
