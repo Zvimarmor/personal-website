@@ -1,0 +1,75 @@
+<!-- blog.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zvi Marmor – Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="navbar-inner">
+    <h1>Zvi Marmor</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="blog-container">
+  <h2>Blog</h2>
+  <div id="blog-posts" class="blog-posts"></div>
+</main>
+
+<script>
+const blogPosts = [
+{
+    title: "מחשבות על הזמן",
+    date: "2025-07-01",
+    direction: "rtl",
+    content: `
+    1. בעוד קצת יותר מחודש אהיה בן 27 שנים. עשרים ושבע זה כבר מספר, שנות העשרים המאוחרות.<br><br>
+    2. בזמן האחרון נהיה לי מנהג\\אובססיה לחשב בויקיפדיה את הפער בין שנת לידה של יוצרים מפורסמים לשנת פרסום יצירה ראשונה כדי לגלות בני כמה הם היו כשיצרו משהו (ידעתם שמאיר שלו נהיה סופר רק בגיל 40?)<br><br>
+    3. כנראה שזה כדי לאמת לעצמי שאין גיל מובהק לדברים, שאני לא מאחר, שזה בסדר לקחת את הזמן כדי להבשיל.<br><br>
+    4. מנגרג׳ונה למדתי שזמן זה משהו שאנחנו המצאנו. לא, סליחה. שמות לזמן זה משהו שאנחנו המצאנו, שמונח על גבי המציאות כמות שהיא. איזה ערך יש למילה ׳שנה׳ לדוגמא, ואיך ערך זה משתנה בין שנה במסלול בצבא? שנה בטיול הגדול? שנה מגיל 0 עד 1?<br><br>
+    5. לקרוא בשמות לזמן נותן לי בעיקר את יכולת ההשוואה - מה אעשה בשעה הבאה? איך היה היום האחרון? כמה זמן לקח לי לרוץ עשרה קילומטרים הפעם?<br><br>
+    6. האמת היא כנראה שהזמן הוא בסך הכל המסגרת הרציפה שבה הכל קורה לי. המסגרת שבה אני חי. בדיוק כמו אורך, רוחב ונפח.<br><br>
+    7. אני לא יודע אם אני מרגיש בן עשרים ושבע שנים או שזו רק המדידה החיצונית, ואולי הכל כדי לא להפיל לעצמי את האסימון שאני בן 27 עוד מעט.<br><br>
+    8. בספר קטן של עמוס עוז מצאתי סיפור יפה:<br>
+    היה פעם כפר שכוח אל רגלי הקרפטים, כפר של שלושים בקתות ובו רק שני שעונים, אחד בבית הסטרוסטה שהוא זקן הכפר ואחד אצל הדיאקון, מעין כומר. יום אחד נעצר אחד השעונים והשני אבד, או להפך. נותר כל הכפר בלי זמן.<br>
+    ובכן שלחו בחור אחד, זריז, יודע כתב, אל מעבר להר אל העיר נדוורנה, כדי שיביא להם מחדש את הזמן וישוב לכוון את השעון שעצר.<br>
+    רכב הבחור חצי יום או יותר, הגיע לנדוורנה, מצא את שעון הרכבת, העתיק בזהירות על פתק את הזמן המדויק, קיפל והחביא את הפתק היקר בחגורתו ורכב בחזרה אל כפרו.
+    `
+  },
+  {
+    title: "Thoughts on Trading Algorithms",
+    date: "2025-07-15",
+    content: "Some reflections on how AI can be used responsibly in trading strategies..."
+  }
+];
+
+const blogContainer = document.getElementById('blog-posts');
+
+blogPosts.forEach(post => {
+  const postElement = document.createElement('div');
+  postElement.classList.add('blog-post');
+  postElement.setAttribute('dir', post.direction);
+  postElement.innerHTML = `
+    <h3>${post.title}</h3>
+    <p class="blog-date">${post.date}</p>
+    <p>${post.content}</p>
+  `;
+  blogContainer.appendChild(postElement);
+});
+</script>
+
+</body>
+</html>
