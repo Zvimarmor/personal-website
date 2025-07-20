@@ -28,7 +28,7 @@ body {
 }
 
 .navbar-inner {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
   display: flex;
@@ -403,5 +403,76 @@ body {
 .blog-post p {
   font-size: 1.1rem;
   line-height: 1.6;
+}
+
+/* PROJECT CARDS */
+.project-card {
+  background: var(--almond);
+  color: var(--espresso);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  background: var(--caramel);
+  color: var(--espresso);
+}
+
+.project-card h3 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  color: var(--coffee);
+}
+
+.project-card p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.github-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--espresso);
+  color: var(--vanilla);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.github-button:hover {
+  background: var(--vanilla);
+  color: var(--espresso);
+  transform: translateY(-3px);
+}
+
+.github-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.image-row img {
+  width: 40%;
+  border-radius: 15px;
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.1);
 }
 
