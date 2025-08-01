@@ -1,3 +1,6 @@
+/* =====================================
+  COLOR PALETTE VARIABLES
+===================================== */
 :root {
   --caramel: #AB7743;
   --espresso: #4C2B08;
@@ -6,18 +9,24 @@
   --coffee: #6D3914;
 }
 
-/* GENERAL */
+/* =====================================
+  GLOBAL STYLES
+===================================== */
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: var(--vanilla);
   color: var(--espresso);
 }
+
 .lock-scroll { overflow: hidden; }
 .hidden { display: none; }
 
-/* NAVBAR */
+/* =====================================
+  NAVIGATION BAR
+===================================== */
 .navbar {
   background: var(--coffee);
   color: var(--vanilla);
@@ -56,7 +65,11 @@ body {
   color: var(--caramel);
 }
 
-/* HERO */
+/* =====================================
+  HERO LANDING SECTION (HIDDEN)
+===================================== */
+
+/*
 .hero {
   height: 100vh;
   display: flex;
@@ -97,13 +110,15 @@ body {
   color: var(--espresso);
 }
 
-/* SLIDE-UP */
 .slide-up {
   transform: translateY(-100vh);
   pointer-events: none;
 }
+*/
 
-/* MAIN CONTENT */
+/* =====================================
+  MAIN SECTION (Home Content)
+===================================== */
 #main-content {
   min-height: 100vh;
   display: flex;
@@ -117,7 +132,6 @@ body {
   color: var(--espresso);
 }
 
-/* HOME INTRO */
 .home-intro h2 {
   font-size: 2.4rem;
   margin-bottom: 1rem;
@@ -136,7 +150,9 @@ body {
   box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
 }
 
-/* CARDS */
+/* =====================================
+  PROJECT CARDS
+===================================== */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -178,7 +194,9 @@ body {
   line-height: 1.4;
 }
 
-/* RESUME */
+/* =====================================
+  RESUME SECTION
+===================================== */
 .resume {
   padding: 50px 20px;
   max-width: 900px;
@@ -207,7 +225,9 @@ body {
   list-style: disc;
 }
 
-/* PHOTO GALLERY */
+/* =====================================
+  PHOTO GALLERY
+===================================== */
 .gallery-section {
   width: 100%;
   max-width: none;
@@ -243,25 +263,17 @@ body {
   aspect-ratio: 1 / 1;
 }
 
-.tall {
-  grid-row: span 2;
-}
-
-.wide {
-  grid-column: span 2;
-}
-
-.big {
-  grid-column: span 2;
-  grid-row: span 2;
-}
+.tall { grid-row: span 2; }
+.wide { grid-column: span 2; }
+.big  { grid-column: span 2; grid-row: span 2; }
 
 .gallery-grid img:hover {
   transform: scale(1.05);
 }
 
-
-/* CONTACT */
+/* =====================================
+  CONTACT SECTION
+===================================== */
 .contact-container {
   max-width: 800px;
   margin: 0 auto;
@@ -290,7 +302,9 @@ body {
   color: var(--caramel);
 }
 
-/* SOCIAL BUTTONS */
+/* =====================================
+  SOCIAL BUTTONS
+===================================== */
 .social-buttons {
   display: flex;
   flex-direction: column;
@@ -324,7 +338,9 @@ body {
   height: 24px;
 }
 
-/* CONTACT FORM */
+/* =====================================
+  CONTACT FORM
+===================================== */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -365,7 +381,9 @@ body {
   transform: translateY(-3px);
 }
 
-/* BLOG */
+/* =====================================
+  BLOG SECTION
+===================================== */
 .blog-container {
   max-width: 900px;
   margin: 0 auto;
@@ -398,7 +416,6 @@ body {
   text-align: left;
 }
 
-
 .blog-post h3 {
   margin-top: 0;
   font-size: 1.8rem;
@@ -416,13 +433,15 @@ body {
   line-height: 1.6;
 }
 
-/* PROJECT CARDS */
+/* =====================================
+  FULL-WIDTH PROJECT DISPLAY
+===================================== */
 .project-card {
   background: var(--almond);
   color: var(--espresso);
   width: 100%;
   max-width: 1200px;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 4px 4px 20px rgba(0,0,0,0.1);
@@ -473,6 +492,9 @@ body {
   height: 24px;
 }
 
+/* =====================================
+  IMAGE GRID INSIDE PROJECTS
+===================================== */
 .image-row {
   display: flex;
   justify-content: center;
@@ -486,4 +508,3 @@ body {
   border-radius: 15px;
   box-shadow: 4px 4px 15px rgba(0,0,0,0.1);
 }
-
