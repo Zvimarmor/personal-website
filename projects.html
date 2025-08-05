@@ -23,6 +23,28 @@
 </header>
 
 <section id="main-content">
+  <section class="project-card">
+    <h3>Spotify Track Popularity Predictor</h3>
+    <p>This project explores the prediction of Spotify track popularity using machine learning models. Instead of predicting an exact score (0–100), tracks are categorized into one of 10 popularity ranges (e.g., 0–9, 10–19, ..., 90–100), framing the task as a multi-class classification problem.</p>
+  
+    <p>The dataset contains both numerical and categorical features for each song, including genre. After preprocessing and one-hot encoding, several models were trained and evaluated:</p>
+  
+    <ul>
+      <li><strong>Neural Network (Keras):</strong> Achieved <em>Top-1 accuracy of 50%</em> and <em>Top-3 accuracy of 87%</em>. Architecture included 3 hidden layers with dropout regularization and softmax output.</li>
+      <li><strong>K-Nearest Neighbors:</strong> Matched Top-1 accuracy of 50% and 80% Top-3.</li>
+      <li><strong>Decision Tree:</strong> Lower performance, but still informative.</li>
+      <li><strong>Baselines:</strong> Most frequent and random classifiers included for comparison.</li>
+    </ul>
+  
+    <p>Top-3 accuracy was especially informative, showing that the model often ranked the correct class near the top even if not first.</p>
+  
+    <p>A GUI was also developed to allow users to upload an MP3 and predict its popularity range using the trained neural model. It extracts features via <code>librosa</code>, encodes genre input, and returns a predicted popularity bracket (e.g., "Predicted: 30–39").</p>
+  
+    <a href="https://github.com/Zvimarmor/SpotifyDataAnalysis" class="github-button" target="_blank">
+      <img src="icons/github.svg" alt="GitHub Icon"> View on GitHub
+    </a>
+  </section>
+
   <div class="project-card">
     <h3>Telegram Multilingual Translation Bot</h3>
     <p>
