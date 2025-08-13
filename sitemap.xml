@@ -12,4 +12,24 @@
     <loc>https://zvimarmor.com/projects.html</loc>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://zvimarmor.com/contact.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://zvimarmor.com/posts/song-of-myself.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://zvimarmor.com/posts/zman.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://zvimarmor.com/posts/berkeley-nagarjuna.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://zvimarmor.com/posts/eviatar-shulman-task1.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
