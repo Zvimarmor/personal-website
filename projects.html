@@ -1,293 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects by Zvi Marmor: ML, bots, games, cognitive simulations, and more.">
   <title>Projects | Zvi Marmor</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <header class="navbar">
+    <div class="navbar-inner">
+      <h1>Zvi Marmor</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="zvimarmor_cv.pdf" target="_blank" rel="noopener">Resume</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<header class="navbar">
-  <div class="navbar-inner">
-    <h1>Zvi Marmor</h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="zvimarmor_cv.pdf" target="_blank">Resume</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <section id="main-content">
+    <div class="project-card">
+      <h3>Spotify Track Popularity Predictor</h3>
+      <p>
+        This project predicts <strong>Spotify track popularity levels</strong> using machine learning, formulated as a
+        10-class classification task instead of a regression problem.<br><br>
 
-<section id="main-content">
-  <div class="project-card">
-    <h3>Spotify Track Popularity Predictor</h3>
-    <p>
-      This project predicts <strong>Spotify track popularity levels</strong> using machine learning, formulated as a 10-class classification task instead of a regression problem.<br><br>
-  
-      <strong>Key Features:</strong><br>
-      – Transforms Spotify popularity score (0–100) into 10 discrete popularity buckets (0–9).<br>
-      – Designed to emphasize general popularity trends rather than precise scores.<br><br>
-  
-      <strong>Neural Network Architecture:</strong><br>
-      – 3 dense layers: [256, 128, 64] with ReLU activations.<br>
-      – Dropout (0.3) regularization, softmax output, categorical crossentropy loss.<br>
-      – Early stopping and class weighting for improved generalization.<br><br>
-  
-      <strong>Baseline Comparisons:</strong><br>
-      – Compared to KNN, Decision Tree, and naive baselines (most frequent & random).<br>
-      – Neural model achieved <strong>Top-1 Accuracy: 0.50</strong> and <strong>Top-3 Accuracy: 0.87</strong>.<br><br>
-  
-      <strong>GUI App:</strong><br>
-      – Upload an MP3 file, select a genre, and predict the popularity range.<br>
-      – Built with <code>tkinter</code>, <code>librosa</code>, and the trained neural model.<br><br>
-  
-      The project was built by <strong>Zvi Marmor</strong>, <strong>Shaked Hartal</strong> and <strong>Shai Abu</strong> during the course <strong>A Needle in a Data Haystack</strong> in The Hebrew University.<br>
-    </p>
+        <strong>Key Features:</strong><br>
+        – Transforms Spotify popularity score (0–100) into 10 discrete popularity buckets (0–9).<br>
+        – Designed to emphasize general popularity trends rather than precise scores.<br><br>
 
-    <img src="images/projects/SpotifyPopularityPredictor.png" alt="Spotify Popularity Predictor Screenshot" style="width:40%; border-radius: 15px; box-shadow: 4px 4px 15px rgba(0,0,0,0.1); margin-bottom: 10px;">
-    
-    <p style="font-size: 0.95rem;">
-      <em>Screenshot of the GUI app predicting the popularity class of a track based on an uploaded MP3 and selected genre.</em>
-    </p>
-  
-    <a href="https://github.com/Zvimarmor/SpotifyDataAnalysis" class="github-button" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
-      View on GitHub
-    </a>
-  </div>
-</section>
+        <strong>Neural Network Architecture:</strong><br>
+        – 3 dense layers: [256, 128, 64] with ReLU activations.<br>
+        – Dropout (0.3) regularization, softmax output, categorical crossentropy loss.<br>
+        – Early stopping and class weighting for improved generalization.<br><br>
 
-  
+        <strong>Baseline Comparisons:</strong><br>
+        – Compared to KNN, Decision Tree, and naive baselines (most frequent & random).<br>
+        – Neural model achieved <strong>Top-1 Accuracy: 0.50</strong> and <strong>Top-3 Accuracy: 0.87</strong>.<br><br>
 
-  <div class="project-card">
-    <h3>Telegram Multilingual Translation Bot</h3>
-    <p>
-      This project is a fully automated Telegram bot that enables seamless multilingual communication in any group chat.<br><br>
+        <strong>GUI App:</strong><br>
+        – Upload an MP3 file, select a genre, and predict the popularity range.<br>
+        – Built with <code>tkinter</code>, <code>librosa</code>, and the trained neural model.<br><br>
 
-      <strong>Key Features:</strong><br>
-      – Automatically translates every group message into each user's preferred language.<br>
-      – Language preferences collected via free text ("English", "עברית", etc.)<br>
-      – Supports multiple languages per group with easy dynamic updates.<br>
-      – Stores preferences in a lightweight local SQLite database.<br>
-      – Translates via Google Translate using deep-translator.<br>
-      – Fully asynchronous Python bot using <code>python-telegram-bot</code> and optimized for cloud deployments (AWS EC2).<br><br>
+        The project was built by <strong>Zvi Marmor</strong>, <strong>Shaked Hartal</strong> and <strong>Shai
+          Abu</strong> during the course <strong>A Needle in a Data Haystack</strong> in The Hebrew University.<br>
+      </p>
 
-      <strong>How It Works:</strong><br>
-      – Each group member sends their preferred language as a simple text message.<br>
-      – The bot responds with confirmation and stores the choice.<br>
-      – Every future message gets automatically translated and grouped in one clear reply.<br><br>
-    </p>
+      <img src="images/projects/SpotifyPopularityPredictor.png" alt="Spotify Popularity Predictor Screenshot"
+        style="width:40%; border-radius: 15px; box-shadow: 4px 4px 15px rgba(0,0,0,0.1); margin-bottom: 10px;">
 
-    <a href="https://t.me/+AOUJseXoUqQxNWNk" class="github-button" target="_blank">
+      <p style="font-size: 0.95rem;">
+        <em>Screenshot of the GUI app predicting the popularity class of a track based on an uploaded MP3 and selected
+          genre.</em>
+      </p>
+
+      <a href="https://github.com/Zvimarmor/SpotifyDataAnalysis" class="github-button" target="_blank"
+        rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
+        View on GitHub
+      </a>
+    </div>
+
+
+
+
+    <div class="project-card">
+      <h3>Telegram Multilingual Translation Bot</h3>
+      <p>
+        This project is a fully automated Telegram bot that enables seamless multilingual communication in any group
+        chat.<br><br>
+
+        <strong>Key Features:</strong><br>
+        – Automatically translates every group message into each user's preferred language.<br>
+        – Language preferences collected via free text ("English", "עברית", etc.)<br>
+        – Supports multiple languages per group with easy dynamic updates.<br>
+        – Stores preferences in a lightweight local SQLite database.<br>
+        – Translates via Google Translate using deep-translator.<br>
+        – Fully asynchronous Python bot using <code>python-telegram-bot</code> and optimized for cloud deployments (AWS
+        EC2).<br><br>
+
+        <strong>How It Works:</strong><br>
+        – Each group member sends their preferred language as a simple text message.<br>
+        – The bot responds with confirmation and stores the choice.<br>
+        – Every future message gets automatically translated and grouped in one clear reply.<br><br>
+      </p>
+
+      <a href="https://t.me/+AOUJseXoUqQxNWNk" class="github-button" target="_blank" rel="noopener noreferrer">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="GitHub Icon">
         Link to Telegram group
       </a>
 
-    <a href="https://github.com/Zvimarmor/TelegramLiveTranslationBot" class="github-button" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
-      View on GitHub
-    </a>
-  </div>
+      <a href="https://github.com/Zvimarmor/TelegramLiveTranslationBot" class="github-button" target="_blank"
+        rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
+        View on GitHub
+      </a>
+    </div>
 
-  <div class="project-card">
-    <h3>NES Classifier – GNN-based Protein Signal Detection</h3>
-    <p>
-      This project was completed as part of a hackathon at The Hebrew University of Jerusalem, during a university course on protein bioinformatics. The project was conducted in a team of four students, and I served as the team coordinator, managing coordination between different parts of the project including data processing, model training, and evaluation.<br><br>
-  
-      <strong>Project Overview:</strong><br>
-      The NES Classifier is a deep learning pipeline designed to detect Nuclear Export Signals (NES) in proteins using their 3D structures. The pipeline is based on a Graph Neural Network (GNN) architecture and provides classification results directly from .pdb protein files.<br><br>
-  
-      <strong>Key Highlights:</strong><br>
-      – GNN-based classification of NES signals using 3D spatial data.<br>
-      – Automatic graph construction from protein residues with spatial filtering.<br>
-      – Node features include amino acid encoding and NES region marking.<br>
-      – Multiple models supported (EGNN by default), trained on positive/negative NES datasets.<br>
-      – Full training and inference pipeline with easy user interface.<br><br>
-  
-      <strong>Outcome:</strong><br>
-      The project achieved robust classification results with clear separation between NES-positive and NES-negative proteins. ROC curves and boxplots were generated for evaluation.<br><br>
-  
-      <strong>Technologies:</strong> PyTorch, PyTorch Geometric, BioPython, scikit-learn, matplotlib
-    </p>
+    <div class="project-card">
+      <h3>NES Classifier – GNN-based Protein Signal Detection</h3>
+      <p>
+        This project was completed as part of a hackathon at The Hebrew University of Jerusalem, during a university
+        course on protein bioinformatics. The project was conducted in a team of four students, and I served as the team
+        coordinator, managing coordination between different parts of the project including data processing, model
+        training, and evaluation.<br><br>
 
-    <div class="image-row">
+        <strong>Project Overview:</strong><br>
+        The NES Classifier is a deep learning pipeline designed to detect Nuclear Export Signals (NES) in proteins using
+        their 3D structures. The pipeline is based on a Graph Neural Network (GNN) architecture and provides
+        classification results directly from .pdb protein files.<br><br>
+
+        <strong>Key Highlights:</strong><br>
+        – GNN-based classification of NES signals using 3D spatial data.<br>
+        – Automatic graph construction from protein residues with spatial filtering.<br>
+        – Node features include amino acid encoding and NES region marking.<br>
+        – Multiple models supported (EGNN by default), trained on positive/negative NES datasets.<br>
+        – Full training and inference pipeline with easy user interface.<br><br>
+
+        <strong>Outcome:</strong><br>
+        The project achieved robust classification results with clear separation between NES-positive and NES-negative
+        proteins. ROC curves and boxplots were generated for evaluation.<br><br>
+
+        <strong>Technologies:</strong> PyTorch, PyTorch Geometric, BioPython, scikit-learn, matplotlib
+      </p>
+
+      <div class="image-row">
         <img src="images/projects/roc_curve.png" alt="ROC Curve for NES Classifier">
         <img src="images/projects/boxplot.png" alt="Boxplot for NES Classifier">
       </div>
-      
+
       <p style="font-size: 0.95rem;">
         <em>Left: ROC Curve demonstrates classification performance.<br>
-        Right: Boxplot shows the distribution of confidence scores between NES-positive and NES-negative samples.</em>
+          Right: Boxplot shows the distribution of confidence scores between NES-positive and NES-negative samples.</em>
       </p>
-      
-        
-  
-    <a href="https://github.com/Zvimarmor/ProteinEMSHackaton/" class="github-button" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
-      View on GitHub
-    </a>
-  </div>
 
-  <div class="project-card">
-    <h3>Pepse Game – Dynamic 2D Open World Simulation</h3>
-    <p>
-      A dynamic 2D open world game.<br><br>
-  
-      <strong>Highlights:</strong><br>
-      – Procedurally generated terrain using Perlin noise.<br>
-      – Day-night cycles with sun movement, halo effects, and smooth transitions.<br>
-      – Avatar with energy mechanics: depletion while moving, regeneration via collectible fruits.<br>
-      – Animated weather with floating clouds and rain triggered on avatar jumps.<br>
-      – Interactive flora: trees with swaying leaves and regenerating fruits.<br><br>
-  
-      <strong>Features:</strong><br>
-      – Component-based design for flexible object composition.<br>
-      – Observer pattern for event-driven rain mechanics.<br><br>
-      – Intuitive avatar controls (arrow keys), environmental interaction, and real-time feedback through energy bars and animations.<br>
-      – Fully configurable cycle durations, world scale, and energy parameters via constants.
-    </p>
-  
-    <img src="images/projects/pepse_screenshot.png" alt="Pepse Game Screenshot" style="width:40%; border-radius: 15px; box-shadow: 4px 4px 15px rgba(0,0,0,0.1); margin-bottom: 10px;">
-  
-    <p style="font-size: 0.75rem; margin-top: -10px;">
-      <em></em>
-    </p>
-  
-    <a href="https://github.com/Zvimarmor/PreciseEnvironmentalSimulator" class="github-button" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
-      View on GitHub
-    </a>
-  </div>
 
-  <div class="project-card">
-    <h3>Categorizing Cognitive Simulator – Prototype vs. Example-Based Image Categorization</h3>
-    <p>
-      This project investigates two key cognitive theories of image categorization: prototype-based and example-based classification strategies. Using a subset of the MNIST dataset (digits 0 and 1), the project compares both methods by varying the training data size and analyzing classification accuracy.<br><br>
-  
-      <strong>Key Features:</strong><br>
-      – Prototype vs. Example-based classification for cognitive modeling.<br>
-      – Scalable evaluation with adjustable training percentages (1% to 100%).<br>
-      – Extended experiments on all digits (0-9) using additional scripts.<br>
-      – Visualizations showing accuracy tradeoffs and categorization efficiency.<br><br>
-  
-      <strong>Methods & Tools:</strong><br>
-      – NumPy for data handling, Matplotlib for visualizations.<br>
-      – IDX file reading and low-level data processing from MNIST dataset.<br>
-      – Modular Python structure for experiments with minimal external dependencies.<br><br>
-  
-    </p>
-  
-    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-      <a href="https://github.com/Zvimarmor/Categorizing_Cognitive_simulator" class="github-button" target="_blank">
+
+      <a href="https://github.com/Zvimarmor/ProteinEMSHackaton/" class="github-button" target="_blank"
+        rel="noopener noreferrer">
         <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
         View on GitHub
       </a>
-  
-      <a href="https://www.linkedin.com/posts/zvimarmor_%D7%9E%D7%94-%D7%94%D7%94%D7%92%D7%93%D7%A8%D7%94-%D7%A9%D7%9C-%D7%A1%D7%9C%D7%98-%D7%90%D7%95-%D7%94%D7%9C%D7%9B%D7%AA-%D7%91%D7%A8%D7%97%D7%95%D7%91-%D7%95%D7%A8%D7%90%D7%99%D7%AA-%D7%A7%D7%A2%D7%A8%D7%94-activity-7211969384574009344-mU1G?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEHAWB0Bh36O5GGHsz-6Ot2Tuatwqe_WzgQ" 
-      class="github-button" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn Icon" style="width:24px; height:24px;">
-        View LinkedIn Post
+    </div>
+
+    <div class="project-card">
+      <h3>Pepse Game – Dynamic 2D Open World Simulation</h3>
+      <p>
+        A dynamic 2D open world game.<br><br>
+
+        <strong>Highlights:</strong><br>
+        – Procedurally generated terrain using Perlin noise.<br>
+        – Day-night cycles with sun movement, halo effects, and smooth transitions.<br>
+        – Avatar with energy mechanics: depletion while moving, regeneration via collectible fruits.<br>
+        – Animated weather with floating clouds and rain triggered on avatar jumps.<br>
+        – Interactive flora: trees with swaying leaves and regenerating fruits.<br><br>
+
+        <strong>Features:</strong><br>
+        – Component-based design for flexible object composition.<br>
+        – Observer pattern for event-driven rain mechanics.<br><br>
+        – Intuitive avatar controls (arrow keys), environmental interaction, and real-time feedback through energy bars
+        and animations.<br>
+        – Fully configurable cycle durations, world scale, and energy parameters via constants.
+      </p>
+
+      <img src="images/projects/pepse_screenshot.png" alt="Pepse Game Screenshot"
+        style="width:40%; border-radius: 15px; box-shadow: 4px 4px 15px rgba(0,0,0,0.1); margin-bottom: 10px;">
+
+     
+      <a href="https://github.com/Zvimarmor/PreciseEnvironmentalSimulator" class="github-button" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
+        View on GitHub
       </a>
     </div>
-  </div>
-  
-  
 
-  <div class="project-card">
-    <h3>Bricker Game – Java Breakout Clone with Advanced Collision Mechanics</h3>
-    <p>
-      A Java-based Breakout-style game.<br><br>
-  
-      <strong>Features:</strong><br>
-      – Multiple collision strategies: extra balls, paddle duplication, turbo mode, and life restoration.<br>
-      – Lives panel with animated heart indicators.<br>
-      – Adjustable grid size via command-line arguments.<br>
-      – Constants-based configuration for easy game balancing.<br><br>
-  
-      <strong>Tech Stack:</strong> Java 17, Danogl game framework.<br><br>
-  
-      <strong>Note:</strong> This game runs as a standalone Java application and is not directly playable in-browser.
-    </p>
-  
-    <img src="images/projects/bricker_screenshot.png" alt="Bricker Game Screenshot" style="width:40%; border-radius: 15px; box-shadow: 4px 4px 15px rgba(0,0,0,0.1); margin-bottom: 10px;">
+    <div class="project-card">
+      <h3>Categorizing Cognitive Simulator – Prototype vs. Example-Based Image Categorization</h3>
+      <p>
+        This project investigates two key cognitive theories of image categorization: prototype-based and example-based
+        classification strategies. Using a subset of the MNIST dataset (digits 0 and 1), the project compares both
+        methods by varying the training data size and analyzing classification accuracy.<br><br>
 
-    <p style="font-size: 0.75rem;">
+        <strong>Key Features:</strong><br>
+        – Prototype vs. Example-based classification for cognitive modeling.<br>
+        – Scalable evaluation with adjustable training percentages (1% to 100%).<br>
+        – Extended experiments on all digits (0-9) using additional scripts.<br>
+        – Visualizations showing accuracy tradeoffs and categorization efficiency.<br><br>
+
+        <strong>Methods & Tools:</strong><br>
+        – NumPy for data handling, Matplotlib for visualizations.<br>
+        – IDX file reading and low-level data processing from MNIST dataset.<br>
+        – Modular Python structure for experiments with minimal external dependencies.<br><br>
+
+      </p>
+
+      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="https://github.com/Zvimarmor/Categorizing_Cognitive_simulator" class="github-button" target="_blank"
+          rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
+          View on GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/posts/zvimarmor_%D7%9E%D7%94-%D7%94%D7%94%D7%92%D7%93%D7%A8%D7%94-%D7%A9%D7%9C-%D7%A1%D7%9C%D7%98-%D7%90%D7%95-%D7%94%D7%9C%D7%9B%D7%AA-%D7%91%D7%A8%D7%97%D7%95%D7%91-%D7%95%D7%A8%D7%90%D7%99%D7%AA-%D7%A7%D7%A2%D7%A8%D7%94-activity-7211969384574009344-mU1G?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEHAWB0Bh36O5GGHsz-6Ot2Tuatwqe_WzgQ"
+          class="github-button" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn Icon"
+            style="width:24px; height:24px;">
+          View LinkedIn Post
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="project-card">
+      <h3>Bricker Game – Java Breakout Clone with Advanced Collision Mechanics</h3>
+      <p>
+        A Java-based Breakout-style game.<br><br>
+
+        <strong>Features:</strong><br>
+        – Multiple collision strategies: extra balls, paddle duplication, turbo mode, and life restoration.<br>
+        – Lives panel with animated heart indicators.<br>
+        – Adjustable grid size via command-line arguments.<br>
+        – Constants-based configuration for easy game balancing.<br><br>
+
+        <strong>Tech Stack:</strong> Java 17, Danogl game framework.<br><br>
+
+        <strong>Note:</strong> This game runs as a standalone Java application and is not directly playable in-browser.
+      </p>
+
+      <img src="images/projects/bricker_screenshot.png" alt="Bricker Game Screenshot"
+        style="width:40%; border-radius: 15px; box-shadow: 4px 4px 15px rgba(0,0,0,0.1); margin-bottom: 10px;">
+
+      <p style="font-size: 0.75rem;">
         <em></em>
       </p>
-  
-    <a href="https://github.com/Zvimarmor/BrickerGame" class="github-button" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
-      View on GitHub
-    </a>
-  </div>
 
-  <div class="project-card">
-    <h3>Personal Website – Portfolio Site</h3>
-    <p>
-      This website was developed as a personal portfolio to showcase projects and technical capabilities. Beyond just front-end development, this project involved learning and applying essential concepts of web hosting, domain management, and modern website deployment.<br><br>
-  
-      <strong>Project Scope:</strong><br>
-      – Full website design and implementation using raw <strong>HTML</strong> and <strong>CSS</strong>.<br>
-      – Minimalist UI design focused on clean and clear user experience.<br>
-      – Structuring of multiple pages with easy navigation and styling.<br><br>
-  
-      <strong>Technical Highlights:</strong><br>
-      – Hands-on experience with <strong>DNS configuration</strong> and <strong>domain registration</strong>.<br>
-      – Setup of a custom domain with live hosting, including <strong>Google Search Console</strong> integration.<br>
-      – Linking the site to external platforms (GitHub repositories, LinkedIn posts, email contact forms).<br>
-      – Experience in managing file hosting via GitHub Pages and connecting site updates to version control.<br><br>
-    </p>
-  
-    <a href="https://github.com/Zvimarmor/personal-website" class="github-button" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
-      View on GitHub
-    </a>
-  </div>
-
-  <div class="project-card">
-    <h3>Sfirat HaOmer WhatsApp Reminder – Automated Daily Notification</h3>
-    <p>
-      A lightweight Python program that sends automated WhatsApp reminders for the daily count of Sfirat HaOmer, including the corresponding Sefira.<br><br>
-  
-      <strong>Project Highlights:</strong><br>
-      – Calculates the current day of the Sefira count based on the Jewish calendar.<br>
-      – Determines and formats the relevant Sefira for each day.<br>
-      – Uses <strong>pywhatkit</strong> library to send scheduled WhatsApp messages directly to the user.<br>
-      – Minimal setup: no servers, no cron jobs – runs locally with WhatsApp Web.<br><br>
-  
-      <strong>Technical Notes:</strong><br>
-      – Python program with zero backend dependencies.<br>
-      – Sends messages via WhatsApp Web browser session, using <strong>pywhatkit</strong>.<br>
-      – Simple command-line usage with real-time feedback.<br><br>
-  
-      <strong>Note:</strong> This script is intended for personal use and requires a logged-in WhatsApp Web session.
-    </p>
-  
-    <img src="images/projects/sfirat_haomer_screenshot.png" alt="Sfirat HaOmer WhatsApp Screenshot" style="width:40%; border-radius: 15px; box-shadow: 4px 4px 15px rgba(0,0,0,0.1); margin-bottom: 10px;">
-  
-    <p style="font-size: 0.95rem; margin-top: -10px;">
-      <em>Screenshot: Example of a WhatsApp message automatically generated and sent by the program.</em>
-    </p>
-  
-    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-      <a href="https://github.com/Zvimarmor/sfirat_haomer" class="github-button" target="_blank">
+      <a href="https://github.com/Zvimarmor/BrickerGame" class="github-button" target="_blank"
+        rel="noopener noreferrer">
         <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
         View on GitHub
       </a>
-  
-      <a href="https://www.linkedin.com/posts/zvimarmor_%D7%94%D7%99%D7%99-%D7%9C%D7%99%D7%A0%D7%A7%D7%93%D7%90%D7%99%D7%9F-%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A7%D7%98%D7%A0%D7%A6%D7%99%D7%A7-%D7%A9%D7%A2%D7%A9%D7%99%D7%AA%D7%99-%D7%9C%D7%98%D7%95%D7%91%D7%AA%D7%99-activity-7191068185893179393-NvVC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEHAWB0Bh36O5GGHsz-6Ot2Tuatwqe_WzgQ" 
-      class="github-button" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn Icon" style="width:24px; height:24px;">
-        View LinkedIn Post
+    </div>
+
+    <div class="project-card">
+      <h3>Personal Website – Portfolio Site</h3>
+      <p>
+        This website was developed as a personal portfolio to showcase projects and technical capabilities. Beyond just
+        front-end development, this project involved learning and applying essential concepts of web hosting, domain
+        management, and modern website deployment.<br><br>
+
+        <strong>Project Scope:</strong><br>
+        – Full website design and implementation using raw <strong>HTML</strong> and <strong>CSS</strong>.<br>
+        – Minimalist UI design focused on clean and clear user experience.<br>
+        – Structuring of multiple pages with easy navigation and styling.<br><br>
+
+        <strong>Technical Highlights:</strong><br>
+        – Hands-on experience with <strong>DNS configuration</strong> and <strong>domain registration</strong>.<br>
+        – Setup of a custom domain with live hosting, including <strong>Google Search Console</strong> integration.<br>
+        – Linking the site to external platforms (GitHub repositories, LinkedIn posts, email contact forms).<br>
+        – Experience in managing file hosting via GitHub Pages and connecting site updates to version control.<br><br>
+      </p>
+
+      <a href="https://github.com/Zvimarmor/personal-website" class="github-button" target="_blank"
+        rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
+        View on GitHub
       </a>
     </div>
-  </div>
 
-</section>
+    <div class="project-card">
+      <h3>Sfirat HaOmer WhatsApp Reminder – Automated Daily Notification</h3>
+      <p>
+        A lightweight Python program that sends automated WhatsApp reminders for the daily count of Sfirat HaOmer,
+        including the corresponding Sefira.<br><br>
+
+        <strong>Project Highlights:</strong><br>
+        – Calculates the current day of the Sefira count based on the Jewish calendar.<br>
+        – Determines and formats the relevant Sefira for each day.<br>
+        – Uses <strong>pywhatkit</strong> library to send scheduled WhatsApp messages directly to the user.<br>
+        – Minimal setup: no servers, no cron jobs – runs locally with WhatsApp Web.<br><br>
+
+        <strong>Technical Notes:</strong><br>
+        – Python program with zero backend dependencies.<br>
+        – Sends messages via WhatsApp Web browser session, using <strong>pywhatkit</strong>.<br>
+        – Simple command-line usage with real-time feedback.<br><br>
+
+        <strong>Note:</strong> This script is intended for personal use and requires a logged-in WhatsApp Web session.
+      </p>
+
+      <img src="images/projects/sfirat_haomer_screenshot.png" alt="Sfirat HaOmer WhatsApp Screenshot"
+        style="width:40%; border-radius: 15px; box-shadow: 4px 4px 15px rgba(0,0,0,0.1); margin-bottom: 10px;">
+
+      <p style="font-size: 0.95rem; margin-top: -10px;">
+        <em>Screenshot: Example of a WhatsApp message automatically generated and sent by the program.</em>
+      </p>
+
+      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="https://github.com/Zvimarmor/sfirat_haomer" class="github-button" target="_blank"
+          rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
+          View on GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/posts/zvimarmor_%D7%94%D7%99%D7%99-%D7%9C%D7%99%D7%A0%D7%A7%D7%93%D7%90%D7%99%D7%9F-%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98-%D7%A7%D7%98%D7%A0%D7%A6%D7%99%D7%A7-%D7%A9%D7%A2%D7%A9%D7%99%D7%AA%D7%99-%D7%9C%D7%98%D7%95%D7%91%D7%AA%D7%99-activity-7191068185893179393-NvVC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEHAWB0Bh36O5GGHsz-6Ot2Tuatwqe_WzgQ"
+          class="github-button" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn Icon"
+            style="width:24px; height:24px;">
+          View LinkedIn Post
+        </a>
+      </div>
+    </div>
+
+  </section>
 
 </body>
+
 </html>
