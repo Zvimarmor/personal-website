@@ -1,0 +1,6 @@
+/* Projects page specific styles */
+#main-content {
+  padding: 60px 20px;
+  background: var(--vanilla);
+  color: var(--espresso);
+}

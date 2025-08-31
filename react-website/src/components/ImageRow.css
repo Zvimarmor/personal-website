@@ -1,0 +1,20 @@
+/* =====================================
+  IMAGE GRID INSIDE PROJECTS
+===================================== */
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.image-row img {
+  width: 40%;
+  border-radius: 15px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  height: auto;
+  max-width: 100%;
+  /* Ensure each image stays readable; will wrap thanks to flex-wrap */
+  min-width: min(260px, 90vw);
+}

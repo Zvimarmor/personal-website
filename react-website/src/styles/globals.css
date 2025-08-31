@@ -1,0 +1,44 @@
+/* =====================================
+  COLOR PALETTE VARIABLES
+===================================== */
+:root {
+  --caramel: #AB7743;
+  --espresso: #4C2B08;
+  --almond: #B7957F;
+  --vanilla: #D7BDA6;
+  --coffee: #6D3914;
+}
+
+/* =====================================
+  GLOBAL STYLES
+===================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--vanilla);
+  color: var(--espresso);
+  min-height: 100vh;
+  width: 100%;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}

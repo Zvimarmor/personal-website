@@ -1,0 +1,112 @@
+/* =====================================
+  CONTACT SECTION
+===================================== */
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--coffee);
+}
+
+.contact-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.email-link {
+  color: var(--espresso);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  color: var(--caramel);
+}
+
+/* =====================================
+  SOCIAL BUTTONS
+===================================== */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: var(--espresso);
+  color: var(--vanilla);
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.3s, transform 0.2s;
+  /* Make all contact buttons the same width while staying responsive */
+  width: 180px;
+  justify-content: center;
+}
+
+.social-button:hover {
+  background: var(--caramel);
+  transform: translateY(-4px);
+  color: var(--espresso);
+}
+
+.social-button img {
+  width: 24px;
+  height: 24px;
+}
+
+/* =====================================
+  CONTACT FORM
+===================================== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  font-size: 1.1rem;
+  border: 2px solid var(--almond);
+  border-radius: 10px;
+  background: white;
+  transition: border 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--caramel);
+}
+
+.contact-form button {
+  background: var(--espresso);
+  color: var(--vanilla);
+  font-size: 1.2rem;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contact-form button:hover {
+  background: var(--caramel);
+  color: var(--espresso);
+  transform: translateY(-3px);
+}

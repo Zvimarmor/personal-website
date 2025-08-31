@@ -1,0 +1,95 @@
+/* =====================================
+  FULL-WIDTH PROJECT DISPLAY
+===================================== */
+.project-card {
+  background: var(--almond);
+  color: var(--espresso);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 30px auto;
+  padding: 30px;
+  padding-top: 30px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: all 0.3s;
+}
+
+.project-card:hover {
+  background: var(--caramel);
+  color: var(--espresso);
+}
+
+.project-card h3 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  color: var(--coffee);
+}
+
+.project-card p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Center standalone images inside project cards without affecting icon images in buttons */
+.project-card > img {
+  display: block;
+  margin: 0 auto 10px auto;
+  height: auto;
+  max-width: 100%;
+  /* Prevent tiny images while keeping responsive behavior */
+  min-width: min(280px, 90vw);
+}
+
+/* Center italicized captions under images inside project cards */
+.project-card p em {
+  display: block;
+  text-align: center;
+}
+
+.github-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--espresso);
+  color: var(--vanilla);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.github-button:hover {
+  background: var(--vanilla);
+  color: var(--espresso);
+  transform: translateY(-3px);
+}
+
+.github-button img {
+  width: 24px;
+  height: 24px;
+}
+
+/* =====================================
+  IMAGE GRID INSIDE PROJECTS
+===================================== */
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.image-row img {
+  width: 40%;
+  border-radius: 15px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  height: auto;
+  max-width: 100%;
+  /* Ensure each image stays readable; will wrap thanks to flex-wrap */
+  min-width: min(260px, 90vw);
+}

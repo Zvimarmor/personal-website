@@ -1,0 +1,32 @@
+/* =====================================
+  MAIN SECTION (Home Content)
+===================================== */
+#main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 60px 20px;
+  text-align: center;
+  background: var(--vanilla);
+  color: var(--espresso);
+}
+
+/* Home-page only: reduce gallery rows and cap height to avoid overflow without touching the navbar */
+.home #main-content {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  gap: 32px;
+}
+
+.home-intro h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.home-intro p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
