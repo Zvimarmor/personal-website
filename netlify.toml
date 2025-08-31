@@ -1,0 +1,8 @@
+[build]
+  publish = "react-website/dist"
+  command = "cd react-website && npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
