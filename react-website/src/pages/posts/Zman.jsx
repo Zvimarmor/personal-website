@@ -20,7 +20,7 @@ const Zman = () => {
       title="Thoughts on Time"
       date="2025-07-01"
       content={content}
-      direction="ltr"
+      direction="rtl"
     />
   )
 }
