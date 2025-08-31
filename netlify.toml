@@ -1,6 +1,9 @@
 [build]
   publish = "react-website/dist"
-  command = "cd react-website && npm run build"
+  command = "cd react-website && npm ci && npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
 
 [[redirects]]
   from = "/*"
