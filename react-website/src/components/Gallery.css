@@ -100,6 +100,30 @@
     grid-column: span 1;
     aspect-ratio: 1/1;
   }
+
+  /* Mobile-specific ordering */
+  .home .gallery-grid img.mobile-order-1 { order: 1; }
+  .home .gallery-grid img.mobile-order-2 { order: 2; }
+  .home .gallery-grid img.mobile-order-3 { order: 3; }
+  .home .gallery-grid img.mobile-order-4 { order: 4; }
+  .home .gallery-grid img.mobile-order-5 { order: 5; }
+  .home .gallery-grid img.mobile-order-6 { order: 6; }
+  .home .gallery-grid img.mobile-order-7 { order: 7; }
+  .home .gallery-grid img.mobile-order-8 { order: 8; }
+  .home .gallery-grid img.mobile-order-9 { order: 9; }
+}
+
+/* Desktop ordering (default) */
+@media (min-width: 769px) {
+  .home .gallery-grid img.desktop-order-1 { order: 1; }
+  .home .gallery-grid img.desktop-order-2 { order: 2; }
+  .home .gallery-grid img.desktop-order-3 { order: 3; }
+  .home .gallery-grid img.desktop-order-4 { order: 4; }
+  .home .gallery-grid img.desktop-order-5 { order: 5; }
+  .home .gallery-grid img.desktop-order-6 { order: 6; }
+  .home .gallery-grid img.desktop-order-7 { order: 7; }
+  .home .gallery-grid img.desktop-order-8 { order: 8; }
+  .home .gallery-grid img.desktop-order-9 { order: 9; }
 }
 
 /* Very small mobile screens */
