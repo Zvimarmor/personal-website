@@ -10,6 +10,7 @@ const Gallery = () => {
     { src: '/images/intro/photo6.png', className: '', alt: '' },
     { src: '/images/intro/photo4.png', className: '', alt: '' },
     { src: '/images/intro/photo7.jpg', className: 'wide', alt: '' },
+    { src: '/images/intro/photo8.JPG', className: '', alt: '' },
   ]
 
   return (

@@ -6,6 +6,21 @@
   NODE_VERSION = "18"
 
 [[redirects]]
+  from = "/resume.html"
+  to = "/zvimarmor_cv.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/projects.html"
+  to = "/projects"
+  status = 301
+
+[[redirects]]
+  from = "/blog.html"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
