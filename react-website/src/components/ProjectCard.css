@@ -1,95 +1,135 @@
 /* =====================================
-  FULL-WIDTH PROJECT DISPLAY
+   FULL-WIDTH PROJECT DISPLAY
 ===================================== */
 .project-card {
-  background: var(--almond);
-  color: var(--espresso);
+  background: var(--sage-wash);
+  color: var(--text-primary);
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto 30px auto;
-  padding: 30px;
-  padding-top: 30px;
-  border-radius: 20px;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto var(--space-xl) auto;
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
   text-align: left;
-  transition: all 0.3s;
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out);
+  border: 1px solid rgba(164, 172, 134, 0.3);
+  border-left: 4px solid transparent;
+  position: relative;
 }
 
 .project-card:hover {
-  background: var(--caramel);
-  color: var(--espresso);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-left-color: var(--chamois);
 }
 
 .project-card h3 {
-  font-size: 1.7rem;
-  margin-bottom: 10px;
-  color: var(--coffee);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-md);
+  color: var(--bistre);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .project-card p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 10px;
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  margin-bottom: var(--space-sm);
+  color: var(--reseda);
 }
 
-/* Center standalone images inside project cards without affecting icon images in buttons */
+.project-card strong {
+  color: var(--bistre);
+}
+
+/* Center standalone images inside project cards */
 .project-card > img {
   display: block;
-  margin: 0 auto 10px auto;
+  margin: var(--space-md) auto;
   height: auto;
   max-width: 100%;
-  /* Prevent tiny images while keeping responsive behavior */
   min-width: min(280px, 90vw);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 }
 
-/* Center italicized captions under images inside project cards */
+/* Center italicized captions */
 .project-card p em {
   display: block;
   text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--reseda);
 }
 
+/* ── Action Buttons ── */
 .github-button {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: var(--espresso);
-  color: var(--vanilla);
+  gap: var(--space-sm);
+  background: var(--ebony);
+  color: var(--sage-wash);
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 8px 16px;
-  border-radius: 20px;
-  transition: background 0.3s, transform 0.2s;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  transition: all var(--duration-normal) var(--ease-out);
+  box-shadow: var(--shadow-sm);
 }
 
 .github-button:hover {
-  background: var(--vanilla);
-  color: var(--espresso);
-  transform: translateY(-3px);
+  background: var(--chamois);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(160, 120, 86, 0.3);
 }
 
 .github-button img {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  transition: filter var(--duration-fast);
 }
 
 /* =====================================
-  IMAGE GRID INSIDE PROJECTS
+   IMAGE GRID INSIDE PROJECTS
 ===================================== */
 .image-row {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: var(--space-xl);
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-lg);
 }
 
 .image-row img {
   width: 40%;
-  border-radius: 15px;
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   height: auto;
   max-width: 100%;
-  /* Ensure each image stays readable; will wrap thanks to flex-wrap */
   min-width: min(260px, 90vw);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .project-card {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+
+  .project-card h3 {
+    font-size: var(--font-size-lg);
+  }
+
+  .image-row {
+    gap: var(--space-md);
+  }
+
+  .image-row img {
+    width: 100%;
+    min-width: unset;
+  }
 }

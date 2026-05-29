@@ -1,6 +1,14 @@
-/* Projects page specific styles */
+/* =====================================
+   PROJECTS PAGE
+===================================== */
 #main-content {
-  padding: 60px 20px;
-  background: var(--vanilla);
-  color: var(--espresso);
+  padding: var(--space-3xl) var(--space-lg);
+  background: linear-gradient(180deg, var(--cream) 0%, var(--sage-wash) 40%, var(--cream) 100%);
+  min-height: calc(100vh - 60px);
+}
+
+@media (max-width: 768px) {
+  #main-content {
+    padding: var(--space-xl) var(--space-md);
+  }
 }

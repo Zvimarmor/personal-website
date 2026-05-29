@@ -1,20 +1,36 @@
 /* =====================================
-  IMAGE GRID INSIDE PROJECTS
+   IMAGE GRID INSIDE PROJECTS
 ===================================== */
 .image-row {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: var(--space-xl);
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-lg);
 }
 
 .image-row img {
   width: 40%;
-  border-radius: 15px;
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   height: auto;
   max-width: 100%;
-  /* Ensure each image stays readable; will wrap thanks to flex-wrap */
   min-width: min(260px, 90vw);
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.image-row img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+  .image-row {
+    gap: var(--space-md);
+  }
+  .image-row img {
+    width: 100%;
+    min-width: unset;
+  }
 }
