@@ -1,4 +1,212 @@
 export const projectsData = [
+  // =============================================
+  //  NEW PROJECTS (from GitHub README analysis)
+  // =============================================
+  {
+    title: "Astra – AI Personal WhatsApp Secretary",
+    description: `
+      <strong>Astra</strong> is an autonomous AI assistant that lives inside WhatsApp, acting as a personal secretary
+      for managing calendars, tasks, habits, expenses, and knowledge — all through natural conversation.<br><br>
+
+      <strong>Architecture:</strong><br>
+      – The latest version (<strong>Astra-local</strong>) runs entirely on local hardware (Mac Mini M4) via
+      <a href="https://github.com/openclaw/openclaw" target="_blank">OpenClaw</a> and
+      <a href="https://ollama.com/" target="_blank">Ollama</a>, keeping all data private.<br>
+      – Earlier cloud version powered by <strong>Gemini 1.5 Flash</strong> with
+      <a href="https://github.com/adiwajshing/Baileys" target="_blank">Baileys</a> as the WhatsApp gateway.<br><br>
+
+      <strong>Key Features:</strong><br>
+      – Google Calendar integration (create & list events via service account).<br>
+      – Task management synced with Google Tasks.<br>
+      – Habit tracking stored in a local SQLite database.<br>
+      – Persistent conversational memory for context-aware responses.<br>
+      – Markdown-based RAG knowledge system for personal notes and documents.<br>
+      – Privacy-first: locked to "Message Yourself" chat; secrets never committed.<br><br>
+
+      <strong>Tech Stack:</strong> TypeScript, Ollama, OpenClaw, Baileys, Better-SQLite3, Google Calendar API
+    `,
+    image: '/images/projects/Astra_chat.png',
+    buttons: [
+      {
+        href: 'https://github.com/Zvimarmor/Astra-local',
+        icon: 'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+        text: 'Astra-local (Latest)'
+      },
+      {
+        href: 'https://github.com/Zvimarmor/WhatsApp_Bot',
+        icon: 'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+        text: 'Astra Cloud Version'
+      }
+    ]
+  },
+  {
+    title: "LectureSync – Synchronized Dual-Media Player",
+    description: `
+      A premium, distraction-free web player that synchronizes separate video and audio tracks in perfect unison —
+      built for students who receive lectures as two separate files (screen capture + lecturer audio).<br><br>
+
+      <strong>Key Features:</strong><br>
+      – <strong>Zero-dependency, local-first</strong>: compiled into a single self-contained HTML file. No server, no
+      data tracking.<br>
+      – Unified play/pause, scrubbable progress slider, and speed controls (1×–2×) operating both tracks in
+      lockstep.<br>
+      – Dual-video presentation mode with side-by-side view and audio source toggle.<br>
+      – Strict sync engine using <code>requestAnimationFrame</code> for sub-frame temporal alignment plus a buffer
+      blocker for seamless resume.<br>
+      – Full keyboard shortcuts (Space, arrows, M, F, P) and bilingual interface (English & Hebrew with RTL).<br>
+      – Sleek dark theme with glassmorphic aesthetic and micro-animations.<br><br>
+
+      <strong>Tech Stack:</strong> Vanilla HTML/CSS/JS (single-file build), Web Audio API, <code>requestAnimationFrame</code> sync
+    `,
+    image: '/images/projects/lectures_sync.png',
+    buttons: [
+      {
+        href: 'https://github.com/Zvimarmor/LectureSync',
+        icon: 'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+        text: 'View on GitHub'
+      }
+    ]
+  },
+  {
+    title: "WISE-Llama – Scaling Model Editing to Llama 3.1",
+    description: `
+      A research project scaling and validating the <strong>WISE (Writing Into Subspaces)</strong> model editing
+      framework on <strong>Llama-3.1-8B-Instruct</strong>, conducted as part of the Sompolinski Lab.<br><br>
+
+      <strong>Project Overview:</strong><br>
+      – Transitioned the WISE algorithm from GPT-J to Llama-3.1-Instruct with fp16 memory optimizations and Chat
+      Template integration.<br>
+      – Evaluated sequential editing performance using TIES merge and Gradient Masking techniques.<br>
+      – Developed validation scripts with batch SBERT semantic similarity scoring and custom stop criteria for
+      Llama-specific end-of-turn tokens.<br><br>
+
+      <strong>Key Optimizations:</strong><br>
+      – Learning rate tuning (edit_lr → 0.1) to prevent generation degradation.<br>
+      – Forced Chat Template usage to ensure grounded, context-following edits.<br>
+      – SLURM cluster execution on high-VRAM GPUs (RTX Pro / A100) with configurable smoke and full-scale runs.<br><br>
+
+      <strong>Tech Stack:</strong> Python, PyTorch, EasyEdit, Sentence-BERT, SLURM, Hugging Face Transformers
+    `,
+    buttons: [
+      {
+        href: 'https://github.com/Zvimarmor/WISE_project',
+        icon: 'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+        text: 'View on GitHub'
+      }
+    ]
+  },
+  {
+    title: "LecturesToSummaries – AI-Powered Lecture Summarizer",
+    description: `
+      A multimodal tool that transforms lecture recordings and slides into study-ready summaries by combining
+      <strong>Whisper</strong> transcription with <strong>Gemini</strong> LLM summarization.<br><br>
+
+      <strong>Key Features:</strong><br>
+      – Accepts audio files (<code>.mp3</code>, <code>.wav</code>), slides (<code>.pdf</code>, <code>.pptx</code>),
+      or both as input.<br>
+      – Automatic silence detection and trimming to optimize processing time.<br>
+      – High-accuracy Speech-to-Text via Whisper with <strong>English and Hebrew</strong> support.<br>
+      – Three summary styles: <strong>Normal</strong> (balanced review), <strong>Informative</strong> (textbook-style
+      deep dive with auto-segmentation), and <strong>Brief</strong> (cheat-sheet).<br>
+      – Context-aware summaries grounded in actual slide content for accuracy.<br><br>
+
+      <strong>Tech Stack:</strong> Python, OpenAI Whisper, Google Gemini API, pydub, FFmpeg
+    `,
+    buttons: [
+      {
+        href: 'https://github.com/Zvimarmor/LecturesToSummeries',
+        icon: 'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+        text: 'View on GitHub'
+      }
+    ]
+  },
+  {
+    title: "Azimut Kosher Kravi – IDF Fitness Training App",
+    description: `
+      A comprehensive fitness and tactical training application designed for IDF soldiers, combining modern fitness
+      tracking, AI-powered coaching, GPS-enabled workouts, and cultural heritage education.<br><br>
+
+      <strong>Core Features:</strong><br>
+      – Personalized workout plans with automated shift scheduling across warmup, cardio, strength, and tactical
+      exercises.<br>
+      – AI chat assistant powered by OpenAI for real-time coaching and training guidance.<br>
+      – GPS-tracked running workouts using Browser Geolocation API.<br>
+      – Heritage education module with cultural stories for soldiers.<br>
+      – Full onboarding flow with fitness assessment and progressive training.<br><br>
+
+      <strong>Tech Stack:</strong> React 18, TypeScript, Vite, Tailwind CSS, Framer Motion, Firebase (Auth + Firestore
+      + Storage), OpenAI API, Netlify Functions
+    `,
+    image: '/images/projects/Azimut-kosher.png',
+    buttons: [
+      {
+        href: 'https://github.com/Zvimarmor/azimut-kosher-kravi',
+        icon: 'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+        text: 'View on GitHub'
+      }
+    ]
+  },
+  {
+    title: "Guard Duty System – Automated Shift Scheduler",
+    description: `
+      A full-stack guard duty scheduling and management system that automates shift assignments and ensures fair
+      distribution of hours among guards.<br><br>
+
+      <strong>Key Features:</strong><br>
+      – Intelligent scheduling algorithm with equitable hour distribution across all guards.<br>
+      – Morning readiness management with specialized shift handling (05:30–11:00).<br>
+      – Activity session support to pause normal scheduling for drills and training events.<br>
+      – Real-time dashboard with current/upcoming shifts, plus filtering by date, post, and guard.<br>
+      – Guard management with mid-period add/remove and automatic schedule rebalancing.<br>
+      – Responsive design with full dark mode support.<br><br>
+
+      <strong>Tech Stack:</strong> Next.js 15, React 19, TypeScript, Tailwind CSS 4, Prisma 6, PostgreSQL (Supabase),
+      Netlify
+    `,
+    buttons: [
+      {
+        href: 'https://github.com/Zvimarmor/RoadGuardProgram',
+        icon: 'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+        text: 'View on GitHub'
+      }
+    ]
+  },
+  {
+    title: "Combat Equipment Check – Military Gear Verification",
+    description: `
+      A web application for tracking and verifying combat equipment assignments in military units. Soldiers verify
+      their assigned gear through a mobile-friendly interface, and commanders monitor status via an admin
+      dashboard.<br><br>
+
+      <strong>Key Features:</strong><br>
+      – <strong>Soldier view</strong>: team → soldier → checklist verification flow with partial submission
+      support.<br>
+      – <strong>Admin dashboard</strong> with 4 tabs: tri-state status tracking (Full / Partial / None),
+      equipment inventory grid with drill-down, soldier onboarding, and full CRUD management.<br>
+      – Admin-protected routes with cookie-based auth, Hebrew RTL interface, mobile-optimized.<br>
+      – Live deployment at <a href="https://checkingTzelem.zvimarmor.com" target="_blank">checkingTzelem.zvimarmor.com</a>.<br><br>
+
+      <strong>Tech Stack:</strong> Next.js 16 (App Router, Turbopack), TypeScript, Prisma 7, PostgreSQL (Supabase),
+      Netlify, Vanilla CSS (dark tactical theme, RTL)
+    `,
+    image: '/images/projects/cobat_equipment.png',
+    buttons: [
+      {
+        href: 'https://github.com/Zvimarmor/CombatEquipmentCheckWebsite',
+        icon: 'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+        text: 'View on GitHub'
+      },
+      {
+        href: 'https://checkingTzelem.zvimarmor.com',
+        icon: 'https://cdn-icons-png.flaticon.com/512/1006/1006771.png',
+        text: 'Live Site'
+      }
+    ]
+  },
+
+  // =============================================
+  //  EXISTING PROJECTS (preserved from original)
+  // =============================================
   {
     title: "Spotify Track Popularity Predictor",
     description: `
@@ -194,20 +402,20 @@ export const projectsData = [
   {
     title: "Personal Website – Portfolio Site",
     description: `
-      This website was developed as a personal portfolio to showcase projects and technical capabilities. Beyond just
-      front-end development, this project involved learning and applying essential concepts of web hosting, domain
-      management, and modern website deployment.<br><br>
+      This website was developed as a personal portfolio to showcase projects and technical capabilities. Originally
+      built with raw HTML/CSS, it was later migrated to a <strong>React + Vite</strong> stack with component-based
+      architecture and deployed via Netlify.<br><br>
 
       <strong>Project Scope:</strong><br>
-      – Full website design and implementation using raw <strong>HTML</strong> and <strong>CSS</strong>.<br>
-      – Minimalist UI design focused on clean and clear user experience.<br>
-      – Structuring of multiple pages with easy navigation and styling.<br><br>
+      – Full website design and implementation, from static HTML to a modern React SPA.<br>
+      – Custom earthy color palette derived from personal photography.<br>
+      – Photo collage landing page, responsive navigation with mobile hamburger menu, and blog system.<br><br>
 
       <strong>Technical Highlights:</strong><br>
       – Hands-on experience with <strong>DNS configuration</strong> and <strong>domain registration</strong>.<br>
       – Setup of a custom domain with live hosting, including <strong>Google Search Console</strong> integration.<br>
       – Linking the site to external platforms (GitHub repositories, LinkedIn posts, email contact forms).<br>
-      – Experience in managing file hosting via GitHub Pages and connecting site updates to version control.<br><br>
+      – Continuous deployment via Netlify from the React/Vite build.<br><br>
     `,
     buttons: [
       {
